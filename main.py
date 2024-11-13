@@ -127,6 +127,7 @@ elif display_option == '3D':
 
     def plot_3d_individuals(df_pca, pca):
         fig = plt.figure(figsize=(30, 30))
+        le = LabelEncoder()
         ax = fig.add_subplot(111, projection='3d')
         satisfaction_encoded = le.fit_transform(df_pca[target_column])
         scatter = ax.scatter(df_pca['PC1'], df_pca['PC2'], df_pca['PC3'],
